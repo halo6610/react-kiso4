@@ -13,7 +13,7 @@ const App:React.FC =()=>{
 	type profile={ name: string, height?: number|string }
 	const profileList: Array<profile> = [{ name: myName, height: 170 },{ name: "Taro", height: "180" }]
 	const myProfile=profileList[0]
-	const hobby:(string|number)[]=["プログラミング","ゲーム","読書",2046]
+	const hobby:(string|number)[]=["プログラミング","ゲーム","読書",2046,"など"]
 	function hobbyFunc(hobby:(number|string)):(number|string){
 		if(typeof(hobby)==="number"){
 			return hobby+2
