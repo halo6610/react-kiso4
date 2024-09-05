@@ -1,33 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React,{ useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App:React.FC =()=>{
+	const [count, setCount] = useState<number>(0)
+	const greeting: string = "hello";
+	const myNameIs="私の名前は"
+	type Name="HALO66"|"HALO67";
+	let myName: Name
+	myName="HALO67"
+	myName="HALO66"
+	
+	type profile={ name: string, height?: number|string }
+	const profileList: Array<profile> = [{ name: myName, height: 170 },{ name: "Taro", height: "180" }]
+	const myProfile=profileList[0]
+	const hobby:(string|number)[]=["プログラミング","ゲーム","読書",2046]
+	function hobbyFunc(hobby:(number|string)):(number|string){
+		if(typeof(hobby)==="number"){
+			return hobby+2
+		}else{
+			return hobby
+		}
+	}
+	const addGreeting = <T, U>(key1: T, key2: U): Array<T | U> => {
+		return [key1, key2];
+	};
+	const greetings=addGreeting< string, string > ("こんにちは", greeting);
 
-  return (
+	const TestComp:React.FC<{message: string}>=(props)=>{
+		return(
+			<>
+			<h2>{props.message}</h2>
+			</>
+		)
+	}
+	return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+			<div className="hobby__container">
+				<h2>{greetings[0]}・{greetings[1]}</h2>
+				<p>{myNameIs}{myProfile.name}です。</p>
+				<TestComp message='好きなこと'/>
+				<ul className='hobby__list'>
+					{hobby.map((item,key)=>(
+						<li key={key}>{hobbyFunc(item)}</li>
+					))}
+				</ul>
+
+			</div>
+
+
+			<button onClick={() => setCount((count) => count + 1)}>
+          クリック回数 {count}
+      </button>
     </>
   )
 }

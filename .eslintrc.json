@@ -1,0 +1,12 @@
+{
+	"env": {
+		"es2022": true
+	},
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser",
+		"ecmaVersion": 13,
+		"ecmaFeatures": {
+			"jsx": true
+	}
+	},
+}
