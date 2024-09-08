@@ -25,8 +25,8 @@ const App:React.FC =()=>{
 		return [key1, key2];
 	};
 	const greetings=addGreeting< string, string > ("こんにちは", greeting);
-
-	const TestComp:React.FC<{message: string}>=(props)=>{
+	type propType={message: string}
+	const TestComp:React.FC<propType>=(props:propType)=>{
 		return(
 			<>
 			<h2>{props.message}</h2>

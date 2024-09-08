@@ -7,4 +7,7 @@ export default defineConfig({
 	? "react-kiso4"            // この行を追加
 	: "./",                     // この行を追加
   plugins: [react()],
+	ssr: {
+		noExternal: [ /\.css$/],
+	},
 })
