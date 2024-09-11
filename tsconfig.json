@@ -12,8 +12,9 @@
 		"jsx": "react-jsx",
     "moduleResolution": "node",
     "lib": [
-      "ESNext",
-      "DOM"
+      "dom",
+      "dom.iterable",
+      "esnext"
     ]
   },
   "files": [],
@@ -21,8 +22,4 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-	"ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
 }

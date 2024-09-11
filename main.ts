@@ -1,7 +1,7 @@
-
+/*
 import * as http from 'http';
 const port = 9000;
-import index from './index.tsx';
+import index from './text.tsx';
 
 const server = http.createServer((request, response) => {
     response.writeHead(200, {
@@ -15,3 +15,4 @@ const server = http.createServer((request, response) => {
 
 server.listen(port);
 console.log(`The server has started and is listening on port number: ${port}`);
+*/

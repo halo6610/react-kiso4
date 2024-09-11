@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: process.env.GITHUB_PAGES  // この行を追加
-	? "react-kiso4"            // この行を追加
-	: "./",                     // この行を追加
+	base: process.env.GITHUB_PAGES
+	? "react-kiso4"
+	: "./",
   plugins: [react()],
+	/*
 	ssr: {
 		noExternal: [ /\.css$/],
-	},
+	},*/
 })
